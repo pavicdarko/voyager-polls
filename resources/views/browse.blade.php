@@ -20,7 +20,7 @@
             <h1 class="page-title">
                 <i class="voyager-bar-chart"></i> {{ __('polls.polls') }}
                 <a href="{{ route('voyager.polls.add') }}" class="btn btn-success">
-                    <i class="voyager-plus"></i> {{ __('voyager.generic.add_new') }}
+                    <i class="voyager-plus"></i> {{ __('voyager::generic.add_new') }}
                 </a>
             </h1>
 
@@ -36,11 +36,11 @@
                             <table id="dataTable" class="table table-hover dataTable no-footer" role="grid" aria-describedby="dataTable_info">
                                 <thead>
                                 <tr role="row">
-                                    <th class="sorting">{{ __('voyager.generic.name') }}</th>
+                                    <th class="sorting">{{ __('voyager::generic.name') }}</th>
                                     <th class="sorting">{{ __('polls.slug') }}</th>
                                     <th class="sorting">{{ __('polls.created_at') }}</th>
                                     <th class="sorting">{{ __('polls.updated_at') }}</th>
-                                    <th class="actions sorting">{{ __('voyager.generic.actions') }}</th></tr>
+                                    <th class="actions sorting">{{ __('voyager::generic.actions') }}</th></tr>
                                 </thead>
                                 <tbody>
 
@@ -53,13 +53,13 @@
                                         <td>{{ Carbon\Carbon::parse($poll->modified_at)->toDayDateTimeString() }}</td>
                                         <td>
                                             <div class="btn-sm btn-danger pull-right delete" data-id="{{ $poll->id }}" id="delete-1">
-                                                <i class="voyager-trash"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager.generic.delete') }}</span>
+                                                <i class="voyager-trash"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager::generic.delete') }}</span>
                                             </div>
                                             <a href="{{ route('voyager.polls.edit', ['id' => $poll->id]) }}" class="btn-sm btn-primary pull-right edit">
-                                                <i class="voyager-edit"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager.generic.edit') }}</span>
+                                                <i class="voyager-edit"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager::generic.edit') }}</span>
                                             </a>
                                             <a href="{{ route('voyager.polls.read', ['id' => $poll->id]) }}" class="btn-sm btn-warning pull-right">
-                                                <i class="voyager-eye"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager.generic.read') }}</span>
+                                                <i class="voyager-eye"></i><span class=" hidden-xs hidden-sm"> {{ __('voyager::generic.read') }}</span>
                                             </a>
                                         </td>
                                     </tr>
