@@ -20,7 +20,7 @@ class PollsServiceProvider extends \Illuminate\Support\ServiceProvider
 
 	public function register()
 	{
-		
+
 		if(!defined('VOYAGER_POLLS_PATH')) {
             define('VOYAGER_POLLS_PATH', __DIR__ . '/..');
         }
@@ -48,7 +48,8 @@ class PollsServiceProvider extends \Illuminate\Support\ServiceProvider
 		$router->get('polls/{id}', ['uses' => $namespacePrefix.'PollsController@read', 'as' => 'polls.read']);
     }
 
-    public function pollRoutesAPI($router){
+    public function pollRoutesAPI($router)
+    {
     	$namespacePrefix = '\\VoyagerPolls\\Http\\Controllers\\';
     	$router->post(env('ROUTE_PREFIX') . '/polls/api/vote/{id}', ['uses' => $namespacePrefix.'PollsController@api_vote', 'as' => 'polls.vote']);
     	$router->get(env('ROUTE_PREFIX') . '/polls/api/{slug}.json', ['uses' => $namespacePrefix.'PollsController@json', 'as' => 'polls.json']);
@@ -76,7 +77,8 @@ class PollsServiceProvider extends \Illuminate\Support\ServiceProvider
 	    }
 	}
 
-	private function loadModels(){
+	private function loadModels()
+	{
 		foreach($this->models as $model){
 			$namespacePrefix = 'VoyagerPolls\\Models\\';
 			if(!class_exists($namespacePrefix . $model)){
@@ -106,7 +108,8 @@ class PollsServiceProvider extends \Illuminate\Support\ServiceProvider
 	    }
     }
 
-    private function addPollsTable(){
+    private function addPollsTable()
+    {
     	if(!Schema::hasTable('voyager_polls')){
 
     		Schema::create('voyager_polls', function (Blueprint $table) {
