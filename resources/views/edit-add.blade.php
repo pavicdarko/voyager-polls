@@ -10,5 +10,5 @@
 @endsection
 
 @section('javascript')
-	<script type="text/javascript" src="{{ asset('/js/polls-app.js') }}"></script>
+	<script><?php include(VOYAGER_POLLS_PATH.'/app.js'); ?></script>
 @endsection
